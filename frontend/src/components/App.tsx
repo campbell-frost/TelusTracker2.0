@@ -1,25 +1,18 @@
 import React, { useState } from "react";
-import { IoMoon } from "react-icons/io5";
-import { IoSunny } from "react-icons/io5";
 
-import { IncrementTime, GetRandomAffirmation, ClearTime, GetRandomJr } from "../wailsjs/go/main/App";
-import { Button } from "./components/ui/button";
-import { Input } from "./components/ui/input";
-import TelusLight from "./assets/TelusTracker.png";
-import TelusDark from "./assets/TelusTrackerDark.png";
-
+import { IncrementTime, GetRandomAffirmation, ClearTime, GetRandomJr } from "../../wailsjs/go/main/App";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import TelusDark from "../assets/TelusTrackerDark.png"
+import TelusLight from "../assets/TelusTracker.png"
+import { useDarkMode } from "./DarkModeContext";
 function App() {
-  const [dark, setDark] = useState(false);
   const [time, setTime] = useState(0);
   const [affirmation, setAffirmation] = useState("");
   const [jr, setJr] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
-
-  const darkModeHandler = () => {
-    setDark(!dark);
-    document.body.classList.toggle("dark");
-  };
+  const { dark } = useDarkMode();
 
   const incrementTime = async (time: number) => {
     try {
@@ -70,13 +63,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen grid mx-auto py-8 relative">
-      <button
-        onClick={() => darkModeHandler()}
-        className="absolute top-4 right-4 p-2 bg-gray-200 dark:bg-gray-800 rounded-full"
-      >
-        {dark ? <IoSunny /> : <IoMoon />}
-      </button>
+    <>
       {dark ? <img src={TelusDark} alt="Telus Dark" /> : <img src={TelusLight} alt="Telus Light" />}
       <div className="flex gap-8 items-start">
         <div className="text-2xl font-bold flex-1 flex flex-col pl-40 items-start space-y-4">
@@ -90,16 +77,21 @@ function App() {
           </form>
         </div>
         <div className="text-2xl font-bold flex-1 flex flex-col pr-10 items-start space-y-4">
-          <h1>Total time: <strong>{time}</strong></h1>
-          <h1>{affirmation} - {jr}</h1>
+          <h1>Total time: {time}</h1>
+          {affirmation &&
+            <h1>"{affirmation}"
+              <br />- {jr}
+            </h1>
+          }
         </div>
       </div>
       {error && <h1>
-
         {error}
       </h1>
       }
-    </div>
+      <p className="absolute right-4 bottom-4"><a href="http://frostie.vercel.app">Buy my mixtape</a></p>
+    </>
+
   );
 }
 
