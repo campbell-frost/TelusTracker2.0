@@ -2,12 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './components/App.tsx'
 import './index.css'
-import Shell from './Shell.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Shell>
-      <App />
-    </Shell>
+    <App />
   </React.StrictMode>,
 )

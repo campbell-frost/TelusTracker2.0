@@ -77,7 +77,7 @@ func (a *App) InitializeAffirmations() {
 		"The Joker was here",
 		"Did I tell you how much I love speeding?",
 		"You want to hit a bowl so bad (do it)",
-		"Hey Lineen!",
+		"Hey Jude!",
 		"Fire and Ice",
 		"Hamburger jr?",
 		"if i had one wish i would use the big red button on at all",

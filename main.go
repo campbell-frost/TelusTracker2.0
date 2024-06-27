@@ -27,12 +27,12 @@ func main() {
 	// Create application with options
 	err := wails.Run(&options.App{
 		Title:             "TelusTracker",
-		Width:             1024,
-		Height:            768,
-		MinWidth:          1024,
-		MinHeight:         768,
-		MaxWidth:          1280,
-		MaxHeight:         800,
+		Width:             350,
+		Height:            350,
+		MinWidth:          350,
+		MinHeight:         350,
+		MaxWidth:          1920,
+		MaxHeight:         1080,
 		DisableResize:     false,
 		Fullscreen:        false,
 		Frameless:         false,
@@ -42,6 +42,7 @@ func main() {
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},
+		AlwaysOnTop:      true,
 		Menu:             nil,
 		Logger:           nil,
 		LogLevel:         logger.DEBUG,
