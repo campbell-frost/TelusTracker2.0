@@ -2,10 +2,7 @@
 
 ## About
 
-This template comes with Vite, React, TypeScript, TailwindCSS and shadcn/ui.
-
-Built with `Wails v2.5.1` and [shadcn's CLI](https://ui.shadcn.com/docs/cli)
-
+This is a desktop app designed to help my friends track how long they spend on tasks at work.  TelusTracker2.0 was build with with Go and React using the Wails framework.
 ### Using the Template
 ```console
 wails init -n project-name -t https://github.com/Mahcks/wails-vite-react-tailwind-shadcnui-ts
@@ -17,16 +14,6 @@ cd frontend
 
 ```console
 npm install
-```
-
-### Installing Components
-To install components, use shadcn's CLI tool to install
-
-More info here: https://ui.shadcn.com/docs/cli#add
-
-Example:
-```console
-npx shadcn-ui@latest add [component]
 ```
 
 ## Live Development
