@@ -3,10 +3,8 @@
 ## About
 
 This is a desktop app designed to help my friends track how long they spend on tasks at work.  TelusTracker2.0 was build with with Go and React using the Wails framework.
-### Using the Template
-```console
-wails init -n project-name -t https://github.com/Mahcks/wails-vite-react-tailwind-shadcnui-ts
-```
+
+## Getting started
 
 ```console
 cd frontend
